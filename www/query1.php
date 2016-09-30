@@ -109,8 +109,8 @@ if ($_GET['id']) {
 </thead>
 <tbody>
 <?php
-foreach(sort(array_keys($summary_data)) as $sp) {
-  echo '<tr><td>' $sp . '</td><td>' . $summary_data[$sp][0] . '</td><td>' . $summary_data[$sp][1] . '</td></tr>';
+foreach(array_keys($summary_data) as $sp) {
+  echo '<tr><td>' . $sp . '</td><td>' . $summary_data[$sp][0] . '</td><td>' . $summary_data[$sp][1] . '</td></tr>';
 }
 ?>
 </tbody>
