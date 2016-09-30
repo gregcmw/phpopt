@@ -117,6 +117,7 @@ foreach(array_keys($summary_data) as $sp) {
 </table>
 </div>
 
+<p> &nbsp; </p>
 
 <iframe src="https://en.m.wikipedia.org/wiki/<?php echo $rec_species ?>" width="800" height="1000"></iframe>
 

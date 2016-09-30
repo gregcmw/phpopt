@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-$num_rows = 50;
+$num_rows = 200000;
 $species_names = explode("\n", file_get_contents("mammals.txt"));
 $uuids = array();
 
