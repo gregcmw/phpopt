@@ -8,7 +8,7 @@ if ($_GET['id']) {
   $linked_ids = array();
   $summary_data = array();
   
-  $dbconn = pg_connect("host=localhost port=5432 dbname=carnivorae user=root password=orangered");
+  $dbconn = pg_connect("host=localhost port=5432 dbname=carnivorae user=ubuntu password=orangered");
   if (!$dbconn) {
     echo "ERROR: Could not connect to database\n";
     exit;

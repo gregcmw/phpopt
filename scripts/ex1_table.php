@@ -5,7 +5,7 @@ $num_rows = 50;
 $species_names = explode("\n", file_get_contents("mammals.txt"));
 $uuids = array();
 
-$dbconn = pg_connect("host=localhost port=5432 dbname=carnivorae user=root password=orangered");
+$dbconn = pg_connect("host=localhost port=5432 dbname=carnivorae user=ubuntu password=orangered");
 if (!$dbconn) {
   echo "ERROR: Could not connect to database\n";
   exit;
@@ -13,7 +13,6 @@ if (!$dbconn) {
 
 pg_query($dbconn, "DROP TABLE IF EXISTS critters");
 pg_query($dbconn, "CREATE TABLE critters (id integer PRIMARY KEY, species varchar(50), uuid varchar(50), foo numeric(5, 4), link1 varchar(50), link2 varchar(50))");
-);
 
 for ($i = 0; $i < $num_rows; $i++) {
   $species = $species_names[rand(0, count($species_names)-1)];
