@@ -4,7 +4,8 @@ echo "Adding packages"
 apt-get install php-pgsql
 
 echo "Configuring nginx"
-cp -f scripts/nginx_default /etc/nginx/sites-available/default
+cp -f scripts/nginx-default /etc/nginx/sites-available/default
+service nginx restart
 
 echo "Configuring PostgreSQL"
 cp scripts/db_template.sql /tmp/
