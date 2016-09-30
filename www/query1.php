@@ -38,7 +38,7 @@ if ($_GET['id']) {
   
     $depth = $linked_ids[$i][1] + 1;
     $row = pg_fetch_row($result);
-    if (!$array_key_exists($row[2], $summary_data)) {
+    if (!array_key_exists($row[2], $summary_data)) {
       # New species, just store this example's values
       $summary_data[$row[2]] = array(1, floatval($row[3]));
     }
@@ -52,7 +52,8 @@ if ($_GET['id']) {
     $linked_ids[] = array($row[4], $depth);
     $linked_ids[] = array($row[5], $depth);    
   }
-   
+  
+  $query_complete = true;  
 }
 
 ?>
@@ -108,15 +109,9 @@ if ($_GET['id']) {
 </thead>
 <tbody>
 <?php
-
-#<tr>
-#  <td>Jill</td>
-#  <td>Smith</td>
-#  <td>50</td>
-#</tr>
-
-
-
+foreach(sort(array_keys($summary_data)) as $sp) {
+  echo '<tr><td>' $sp . '</td><td>' . $summary_data[$sp][0] . '</td><td>' . $summary_data[$sp][1] . '</td></tr>';
+}
 ?>
 </tbody>
 </table>
