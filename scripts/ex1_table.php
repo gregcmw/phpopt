@@ -2,7 +2,7 @@
 <?php
 
 $num_rows = 200000;
-$species_names = explode("\n", file_get_contents("mammals.txt"));
+$species_names = explode("\n", file_get_contents(dirname(__FILE__) . "/mammals.txt"));
 $uuids = array();
 
 $dbconn = pg_connect("host=localhost port=5432 dbname=carnivorae user=ubuntu password=orangered");
