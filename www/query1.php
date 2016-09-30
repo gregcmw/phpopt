@@ -40,7 +40,7 @@ if ($_GET['id']) {
     $row = pg_fetch_row($result);
     if (!$array_key_exists($row[2], $summary_data)) {
       # New species, just store this example's values
-      $summary_data[$row[2]] = array(1, floatval($row[3]);
+      $summary_data[$row[2]] = array(1, floatval($row[3]));
     }
     else {
       # Already in summary, add to quantity and adjust average
@@ -54,8 +54,6 @@ if ($_GET['id']) {
   }
    
 }
-
-
 
 ?>
 <!DOCTYPE html>
