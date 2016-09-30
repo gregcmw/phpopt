@@ -1,4 +1,4 @@
-<?
+<?php
 
 if ($_GET['id']) {
   # Attempt to run the query
@@ -75,7 +75,7 @@ if ($_GET['id']) {
   </div>
 </header>
 
-<p><form method="GET" action="<? echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<p><form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 <form class="w3-container w3-card-4">
   <div class="w3-row">
   <div class="w3-half">
@@ -96,9 +96,9 @@ if ($_GET['id']) {
   </div>
 </form></p>
 
-<? if ($query_complete) { ?>
+<?php if ($query_complete) { ?>
 
-<h2 class="w3-center"><? echo "$rec_species #$rec_id's connections:"; ?></h2>
+<h2 class="w3-center"><?php echo "$rec_species #$rec_id's connections:"; ?></h2>
 <div class="w3-responsive w3-card-4">
 <table class="w3-table w3-striped w3-bordered">
 <thead>
@@ -109,7 +109,7 @@ if ($_GET['id']) {
 </tr>
 </thead>
 <tbody>
-<?
+<?php
 
 #<tr>
 #  <td>Jill</td>
@@ -125,9 +125,9 @@ if ($_GET['id']) {
 </div>
 
 
-<iframe src="https://en.m.wikipedia.org/wiki/<? echo $rec_species ?>" width="800" height="1000"></iframe>
+<iframe src="https://en.m.wikipedia.org/wiki/<?php echo $rec_species ?>" width="800" height="1000"></iframe>
 
-<? } # $query_complete = true ?>
+<?php } # $query_complete = true ?>
 
 </body>
 </html>
