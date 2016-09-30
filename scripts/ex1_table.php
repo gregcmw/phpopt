@@ -1,4 +1,5 @@
-<?
+#!/usr/bin/php
+<?php
 
 $num_rows = 50;
 $species_names = explode("\n", file_get_contents("mammals.txt"));
