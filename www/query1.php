@@ -30,7 +30,7 @@ if ($_GET['id']) {
   $i = 0;
   for($i = 0; $linked_ids[$i][1] <= $maxdepth; $i++) {
     # Iterate over each record until we exceed the depth set in the parameters
-    $result = pg_query($dbconn, "SELECT id, uuid, species, foo, link1, link2 FROM critters WHERE uuid=\"{$linked_ids[$i][0]}\"");
+    $result = pg_query($dbconn, "SELECT id, uuid, species, foo, link1, link2 FROM critters WHERE uuid='{$linked_ids[$i][0]}'");
     if (!$result) {
       echo "ERROR: Target record uuid={$linked_ids[$i][0]} not found in database\n";
       exit;

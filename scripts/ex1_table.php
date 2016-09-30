@@ -18,7 +18,7 @@ for ($i = 0; $i < $num_rows; $i++) {
   $species = $species_names[rand(0, count($species_names)-1)];
   $uuid = uniqid("", true);
   $foo = floatval(rand(0, 99999)) / 10000;
-  pg_query($dbconn, "INSERT INTO critters VALUES($i, \"$species\", \"$uuid\", $foo, NULL, NULL)");
+  pg_query($dbconn, "INSERT INTO critters VALUES($i, '$species', '$uuid', $foo, NULL, NULL)");
   $uuids[$i] = $uuid;
 }
 
@@ -27,7 +27,7 @@ for ($i = 0; $i < $num_rows; $i++) {
     $id1 = rand(0, $num_rows - 1);
     $id2 = rand(0, $num_rows - 1);
   } while (($id1 == $i) || ($id2 == $i) || ($id1 == $id2));
-  pg_query($dbconn, "UPDATE critters SET link1=\"{$uuids[$id1]}\", link2=\"{$uuids[$id2]}\" WHERE id=$i");
+  pg_query($dbconn, "UPDATE critters SET link1='{$uuids[$id1]}', link2='{$uuids[$id2]}' WHERE id=$i");
 }
 
 ?>
